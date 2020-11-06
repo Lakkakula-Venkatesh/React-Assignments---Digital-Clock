@@ -9,14 +9,14 @@ class App extends Component {
     };
   }
   componentDidMount() {
-    this.timerID = setInterval(() => this.tick(), 1000);
+    this.timerID = setInterval(() => this.updateTime(), 1000);
   }
 
   componentWillUnmount() {
     clearInterval(this.timerID);
   }
 
-  tick() {
+  updateTime() {
     this.setState({
       time: new Date().toLocaleTimeString()
     });
